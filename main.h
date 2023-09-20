@@ -48,5 +48,8 @@ void printString(char *string);
 void replaceVariables(char **args);
 int checkAndExecuteBuiltins(char **args, char *input);
 int checkAndExecuteCommand(char **args, char *programName);
+void execCmdPath(char **argArray, char *programName, char *command);
+void execExternalCmd(char **argArray, char *programName, int *waitStatus);
+
 
 #endif

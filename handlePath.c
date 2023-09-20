@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * modifyBuffer - Modifies a command by appending directories from PATH.
  * @command: The command to be modified.
@@ -10,6 +11,7 @@ char *modifyBuffer(char *command)
 	char **directories;
 	int counter = 0;
 	int len = strlen(command);
+
 	/* Get the PATH environment variable value */
 	char *pathValue = getPathValue("PATH");
 
@@ -19,8 +21,7 @@ char *modifyBuffer(char *command)
 	}
 	strcpy(pathStr, pathValue);
 	directories = processArguments(pathStr, ":");
-
-	while (directories[counter])	/* Iterate through directories in PATH */
+	while (directories[counter])
 	{
 		char *modifiedCommand;
 		int bufLen = strlen(directories[counter]);
@@ -32,11 +33,11 @@ char *modifyBuffer(char *command)
 			perror("malloc");
 			exit(EXIT_FAILURE);
 		}
-		strcpy(modifiedCommand, directories[counter]);	/* Construct modified cmd */
+		strcpy(modifiedCommand, directories[counter]);
 		strcat(modifiedCommand, "/");
 		strcat(modifiedCommand, command);
 
-		if (checkCommand(modifiedCommand) == 0)		/* Check if modified cmd exists */
+		if (access(modifiedCommand, F_OK) == 0) /* Check if modified cmd exists */
 		{
 			free(directories);
 			return (modifiedCommand);
