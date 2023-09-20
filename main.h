@@ -12,8 +12,6 @@
 #include <ctype.h>
 #include <stdbool.h>
 
-extern char **environ;
-
 /**
  * struct programStatus - A structure to store program status information.
  * @name: The name of the program.
@@ -31,6 +29,7 @@ struct programStatus
 };
 typedef struct programStatus program_t;
 
+extern char **environ;
 extern program_t prog;
 
 char *getPathValue(const char *name);
@@ -44,7 +43,6 @@ char *modifyBuffer(char *command);
 int checkCommand(char *command);
 void handlePrompt(char *input, char *programName);
 void printString(char *string);
-
 void replaceVariables(char **args);
 int checkAndExecuteBuiltins(char **args, char *input);
 int checkAndExecuteCommand(char **args, char *programName);
