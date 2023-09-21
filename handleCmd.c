@@ -66,7 +66,6 @@ void execExternalCmd(char **argArray, char *programName, int *waitStatus)
  *
  * @argArray: Array of command and its arguments.
  * @programName: Name of the program for error reporting.
- * @waitStatus: Pointer to variable to store child process's exit status.
  * @command: The command to be executed.
  */
 void execCmdPath(char **argArray, char *programName, char *command)
