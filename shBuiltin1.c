@@ -62,7 +62,7 @@ int myCd(info_t *info)
 	chdir_ret = chdir(targetDir);
 	if (chdir_ret == -1)
 	{
-		printError(info, "Can't change to directory: "); /*Hndle dir change failure*/
+		printError(info, "can't cd to"); /*Hndle dir change failure*/
 		ePuts(info->argv[1]);
 		ePutChar('\n');
 	}
