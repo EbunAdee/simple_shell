@@ -1,0 +1,22 @@
+ls
+ls -l
+/bin/ls
+/bin/ls -l
+ls -l /tmp
+env
+ls /var ; ls /var
+ls /hbtn ; ls /var
+ls /var ; ls /hbtn
+ls /var ; ls /hbtn ; ls /var ; ls /var
+ls /var && ls /var
+ls /hbtn && ls /var
+ls /var && ls /var && ls /var && ls /hbtn
+ls /var && ls /var && ls /var && ls /hbtn && ls /hbtn
+ls /var || ls /var
+ls /hbtn || ls /var
+ls /hbtn || ls /hbtn || ls /hbtn || ls /var
+ls /hbtn || ls /hbtn || ls /hbtn || ls /var || ls /var
+echo $?
+echo $$
+echo $PATH
+echo $$ # ls -la
